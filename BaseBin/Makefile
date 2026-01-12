@@ -12,7 +12,7 @@ all: basebin.tar
 subprojects: ChOma XPF MachOMerger opainject libjailbreak systemhook forkfix launchdhook boomerang jbctl idownloadd watchdoghook roothidehooks jailbreakd bootstrapper
 
 ChOma: .build .include
-	@$(MAKE) -C ChOma TARGET=ios DISABLE_SIGNING=1 DISABLE_TESTS=1 DYLIB_LDFLAGS="-install_name @loader_path/libchoma.dylib"
+	@$(MAKE) -C ChOma TARGET=ios DISABLE_SIGNING=1 DISABLE_TESTS=1 DYLIB_LDFLAGS="-install_name @loader_path/libchoma.dylib -framework CoreFoundation"
 	@cp ChOma/output/ios/lib/libchoma.dylib .build
 	@cp -r ChOma/output/ios/include/choma .include
 
